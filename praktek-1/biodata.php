@@ -8,6 +8,4 @@ echo "$nama<br>";
 echo "$usia<br>";
 echo "$kelas<br>";
 echo "$nim<br>";
-
-
 ?>
