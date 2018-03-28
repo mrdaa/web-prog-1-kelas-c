@@ -6,8 +6,10 @@
         <th>KODE</th>
         <th>NAMA BARANG</th>
         <th>STOK</th>
+        <th>OPSI</th>
     </tr>
-    <?php
+
+<?php
 include "koneksi.php";
 
 $koneksiObj = new Koneksi();
@@ -36,8 +38,11 @@ if($data->num_rows <= 0) {
         echo "<td>". $row["nama_barang"] . "</td> "; 
         echo "<td>". $row["stok"] . "</td>";
         echo '<td><a href="form-edit.php?kode=' . 
-            $row["kode"]. '">Edit</a></td>';
-        echo "</tr>";
+            $row["kode"]. '">Edit</a>';
+        
+        echo ' <a href="hapus.php?kode=' . 
+            $row["kode"]. '">Hapus</a></td>';
+            echo "</tr>";
     }
 
 }

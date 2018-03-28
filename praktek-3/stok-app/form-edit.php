@@ -2,25 +2,22 @@
 <hr>
 <?php
 include "koneksi.php";
-$konkesiObj = new Koneksi();
-$koneksi = $konkesiObj->getKoneksi();
-    
-    
+$koneksiObj = new Koneksi();
+$koneksi = $koneksiObj->getKoneksi();
 if($koneksi->connect_error) {
-   echo "Gagal Koneksi : " . $koneksi->connect_error;
-} 
-$query = "select * from stok_barang where kode='" .
-$_GET["kode"] . "'";
+    echo "Gagal koneksi : " . $koneksi->connect_error;
+}
+$query = "select * from stok_barang where kode='" . 
+    $_GET["kode"] . "'";
 $data = $koneksi->query($query);
 $namaBarang = "";
 $stok = "";
-
-if($data->num_rows <=0){
-    echo "Mas/Mba, kalo isi data sesuai prosedur yah !!";
+if($data->num_rows <= 0) {
+    echo "Mas/Mba, kalo isi data sesuai prosedur yah!";
 } else {
     while($row = $data->fetch_assoc()) {
         $namaBarang = $row["nama_barang"];
-        $stok = $row ["stok"];
+        $stok = $row["stok"];
     }
 }
 ?>
@@ -32,14 +29,14 @@ if($data->num_rows <=0){
                 value=<?php echo $_GET["kode"]; ?> ></td>
         </tr>
         <tr>
-            <td>NAMA BARANG</td>
-            <td> : <input type="text" name="namaBarang"
-                value=<?php echo $namaBarang; ?> ></td>
+            <td>NAMA BARANG</td> 
+            <td>: <input type="text" name="namaBarang" 
+                value="<?php echo $namaBarang; ?>"></td>
         </tr>
         <tr>
             <td>STOK</td>
             <td> : <input type="text" name="stok"
-            value=<?php echo $stok; ?> ></td>
+                value=<?php echo $stok; ?>></td>
         </tr>
     </table>
     <input type="submit" value="Simpan">
