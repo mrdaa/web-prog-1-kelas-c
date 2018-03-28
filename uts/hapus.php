@@ -4,7 +4,6 @@ include "koneksi.php";
 $koneksiObj = new Koneksi();
 $koneksi = $koneksiObj->getKoneksi();
 
-
 if($koneksi->connect_error) {
     echo "Gagal koneksi : " . $koneksi->connect_error;
 } else {

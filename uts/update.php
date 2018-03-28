@@ -14,7 +14,6 @@ $query = "update data_mahasiswa set nama = '". $_POST["nama"] .
         "', jurusan = '" . $_POST["jurusan"].
         "' where nim='"  . $_POST["nim"] . "'";
 
-
 if($koneksi->query($query) === true) {
     echo "<br> Data " . $_POST["nama"] . " berhasil disimpan." .
             ' <a href="index.php">Lihat Data</a>';

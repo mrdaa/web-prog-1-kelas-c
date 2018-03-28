@@ -38,7 +38,6 @@ if($data->num_rows <= 0) {
             $row["nim"]. '">Hapus</a></td>';
         echo "</tr>";
     }
-
 }
 
 ?>
